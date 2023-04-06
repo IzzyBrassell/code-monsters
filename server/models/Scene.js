@@ -18,3 +18,8 @@ const sceneSchema = new Schema({
 
     },
 })
+
+
+// Scene needs to Reference itself with a Results portion. 
+//The results of your choice are going to be revealed on the next page we either need a results schema that identifies itself based on the choice of a specific scene
+// OR we need to have a way for Scene to incorporate these results and push it into the body of content for the next Scene
