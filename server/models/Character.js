@@ -23,13 +23,11 @@ const characterSchema = new Schema({
         type: Number,
     },
     userId: { 
-        type: mongoose.Schema.Types.ObjectId, 
+        type: Schema.Types.ObjectId, 
         ref: 'User'
-    },
-
-
+    }
 });
 
-const Character = model('Character', userSchema);
+const Character = model('Character', characterSchema);
   
-  module.exports = Charecter;
+module.exports = Character;

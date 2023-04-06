@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const sceneSchema = new Schema({
     sceneId: { 
-        type: mongoose.Schema.Types.ObjectId, 
+        type: Schema.Types.ObjectId, 
         ref: 'Scene'
     },
     content: {
