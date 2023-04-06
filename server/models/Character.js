@@ -3,11 +3,9 @@ const { Schema, model } = require('mongoose');
 const characterSchema = new Schema({
     gender: {
         type: String,
-        required: true,
     },
     class: {
         type: String,
-        required: true,
     },
     hp: {
         type: Number,
