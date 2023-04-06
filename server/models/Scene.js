@@ -4,6 +4,7 @@ const sceneSchema = new Schema({
     sceneId: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'Scene'
+        //This is not how object id works, object id is automatically made when you seed the schema 
     },
     content: {
 
