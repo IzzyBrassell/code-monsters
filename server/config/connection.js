@@ -1,11 +1,6 @@
 const mongoose = require('mongoose');
+require('dotenv').config()
 
-mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb+srv://<username>:<password>@codemonsters.qm0cm7c.mongodb.net/?retryWrites=true&w=majority',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+const connection = mongoose.connect(process.env.MONGODB_URI);
 
-module.exports = mongoose.connection;
+module.exports = connection;
