@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Scene7b() {
+  //Need Reputation Logic Here
   return (
     <Card className='bg-secondary text-white'>
       <Card.Body>
