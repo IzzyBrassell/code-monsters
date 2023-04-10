@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 function Scene7a() {
   return (
     <Card className='bg-secondary text-white'>
