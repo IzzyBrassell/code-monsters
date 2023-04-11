@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,7 +19,7 @@ function Scene2c() {
         </Card.Text>
         <Card.Link href="/S3a">Look for Clues around the Crime Scene</Card.Link>
         <Card.Link href="/S3b">Torture the prisoner until they tell you what they know</Card.Link>
-        <Card.Link href='{ClassChoice}'>Using my Class abilities, I investigate the town</Card.Link>
+        {/* <Card.Link href='{ClassChoice}'>Using my Class abilities, I investigate the town</Card.Link> */}
       </Card.Body>
     </Card>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -20,7 +20,7 @@ function Scene3c() {
         </Card.Text>
         <Card.Link href="/S4a">Kill the Bandits</Card.Link>
         <Card.Link href="/S4b">Pay the Bandit’s Toll ($20)</Card.Link>
-        <Card.Link href='{ClassChoice}'>Get The Bandits to Protect the Town</Card.Link>
+        {/* <Card.Link href='{ClassChoice}'>Get The Bandits to Protect the Town</Card.Link> */}
       </Card.Body>
     </Card>
   );

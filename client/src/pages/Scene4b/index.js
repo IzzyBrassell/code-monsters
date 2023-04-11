@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,7 +19,7 @@ function Scene4b() {
         </Card.Text>
         <Card.Link href="/S5a">Seek out the cultists and have them lead you to the Dragon Lair</Card.Link>
         <Card.Link href="/S5b">Ask Old woman Josie to help you find the Dragon lair</Card.Link>
-        <Card.Link href='{ClassChoice}'>Using my Skills as a (Character.class) I will track the Dragon's Lair Myself</Card.Link>
+        {/* <Card.Link href='{ClassChoice}'>Using my Skills as a (Character.class) I will track the Dragon's Lair Myself</Card.Link> */}
       </Card.Body>
     </Card>
   );
