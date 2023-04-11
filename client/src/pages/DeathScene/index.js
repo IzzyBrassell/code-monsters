@@ -1,7 +1,8 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card'
 
 
-function deathScene() {
+function DeathScene() {
     <Card className='bg-secondary text-white'>
       <Card.Body>
         <Card.Title>A Premature Ending</Card.Title>
@@ -13,4 +14,4 @@ function deathScene() {
     </Card>
 }
 
-export default deathScene;
+export default DeathScene;
