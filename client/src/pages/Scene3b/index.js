@@ -3,6 +3,11 @@ import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Scene3b() {
+
+  const [isRogue, setIsRogue] = useState('');
+  const [isWarrior, setIsWarrior] = useState('');
+  const [isWizard, setIsWizard] = useState('');
+  
   return (
     <Card className='bg-secondary text-white'>
       <Card.Body>

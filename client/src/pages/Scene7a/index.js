@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Scene7a() {
   //Need Rep Logic Here
+
   return (
     <Card className='bg-secondary text-white'>
       <Card.Body>
@@ -14,9 +15,9 @@ function Scene7a() {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Card.Link href="#">Choice 1</Card.Link>
-        <Card.Link href="#">Choice 2</Card.Link>
-        <Card.Link href='#'>Choice 3</Card.Link>
+        <Card.Text>{ReputationComponent}</Card.Text>
+        <Card.Link href="/">Back to Home Page?</Card.Link>
+        <Card.Link href='/cc'>New Game?</Card.Link>
       </Card.Body>
     </Card>
   );
