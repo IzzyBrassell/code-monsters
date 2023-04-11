@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function TopOfPage() {
-        //Need Save/Load Logic Here
+        //Need Save/Load Logic Here with an onclick function
   return (
     <Navbar bg="danger" expand="lg">
       <Container>
@@ -12,12 +12,12 @@ function TopOfPage() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#Login">Login/Sign Up</Nav.Link>
-            <Nav.Link href="#CC">New Game</Nav.Link>
+            <Nav.Link href="/Login">Login/Sign Up</Nav.Link>
+            <Nav.Link href="/CC">New Game</Nav.Link>
             <NavDropdown title="Save/Load" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Save Game</NavDropdown.Item>
+              <NavDropdown.Item>Save Game</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
+              <NavDropdown.Item >
                 Load Game
               </NavDropdown.Item>
             </NavDropdown>
