@@ -17,7 +17,7 @@ function Scene7a() {
         </Card.Text>
         <Card.Text>{ReputationComponent}</Card.Text>
         <Card.Link href="/">Back to Home Page?</Card.Link>
-        <Card.Link href='/cc'>New Game?</Card.Link>
+        <Card.Link href='/CC'>New Game?</Card.Link>
       </Card.Body>
     </Card>
   );

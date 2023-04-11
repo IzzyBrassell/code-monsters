@@ -6,8 +6,8 @@ function CharacterCreation() {
     return(
         <Form>
             <Form.Group>
-                <Form.Label></Form.Label>
-                <Form.Text></Form.Text>
+                <Form.Label>What is our Hero's Name?</Form.Label>
+                <Form.Text>Insert Name</Form.Text>
             </Form.Group>
             <Form.Group>
                 <Form.Label>What is the Gender of our Hero</Form.Label>
@@ -40,3 +40,5 @@ function CharacterCreation() {
         </Form>
     );
 }
+
+export default CharacterCreation;
