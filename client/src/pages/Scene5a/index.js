@@ -19,7 +19,7 @@ function Scene5a() {
         </Card.Text>
         <Card.Link href="/S6a">Steel yourself</Card.Link>
         <Card.Link href="/S6b">Trick the Dragon</Card.Link>
-        <Card.Link href={ClassChoice}>Use your abilities to change the tide of battle</Card.Link>
+        <Card.Link href='{ClassChoice}'>Use your abilities to change the tide of battle</Card.Link>
       </Card.Body>
     </Card>
   );

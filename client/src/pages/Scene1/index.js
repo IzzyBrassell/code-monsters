@@ -17,7 +17,7 @@ function Scene1() {
         </Card.Text>
         <Card.Link href="/S2a">Since no one is looking, I would like to see if any of the passed out villagers have any valuables on them?</Card.Link>
         <Card.Link href="/S2b">I am going to immediately try to save any living villagers I can see from the fire </Card.Link>
-        <Card.Link href={ClassChoice}>Using my Class Abilities, I am Going to try to put out the Fire</Card.Link>
+        <Card.Link href='{ClassChoice}'>Using my Class Abilities, I am Going to try to put out the Fire</Card.Link>
       </Card.Body>
     </Card>
   );
