@@ -2,20 +2,20 @@ import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const LoginSignupPage = () => {
-  // const [username, setUsername] = useState('');
-  // const [password, setPassword] = useState('');
-  // const [isLogin, setIsLogin] = useState(true);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLogin, setIsLogin] = useState(true);
 
   // if (req.session.logged_in === true) {
   //   window.location.href = '/';
   // }
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
   //   // we need to make an API call to Mongo to handle authentication
 
-  //   if (isLogin) {
-  //     console.log('Performing login with username:', username, 'and password:', password);
+    if (isLogin) {
+      console.log('Performing login with username:', username, 'and password:', password);
   //     // Make API call for login
   //     const response = await fetch('/api/users/login', {
   //       method: 'POST',
@@ -33,8 +33,8 @@ const LoginSignupPage = () => {
   //       // Handle login error
   //       console.error('Failed to login:', response.status);
   //     }
-  //   } else {
-  //     console.log('Performing signup with username:', username, 'and password:', password);
+    } else {
+      console.log('Performing signup with username:', username, 'and password:', password);
   //     // Make API call for signup
   //     const response = await fetch('/api/users/signup', {
   //       method: 'POST',
@@ -51,12 +51,12 @@ const LoginSignupPage = () => {
   //       // Handle signup error
   //       console.error('Failed to signup:', response.status);
   //     }
-  //   }
+    }
 
-  //   // Clear the form
-  //   setUsername('');
-  //   setPassword('');
-  // };
+    // Clear the form
+    setUsername('');
+    setPassword('');
+  };
   
     return (
       <div className="container">
