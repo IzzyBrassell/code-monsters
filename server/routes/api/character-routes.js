@@ -1,9 +1,17 @@
 const router = require(`express`).Router()
 const {User, Character} = require(`../../models`)
 
-router.get(`/`, (req, res) => {
-    Character.find({})
-    .then((data) => res.json(data))
-})
+const {
+    getAllCharacters,
+    getCharacterById
+} = require(`../../controller/character-controller`)
+
+router
+    .route(`/`)
+    .get(getAllCharacters)
+
+router
+    .route(`:id`)
+    .get(getCharacterById)
 
 module.exports = router
