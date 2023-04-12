@@ -36,7 +36,7 @@ function CharacterCreation() {
                 <option value="3">Frail (Hard Mode)</option>
                 </Form.Select>
             </Form.Group>
-            <Button variant="Secondary" type="submit">Start the Adventure</Button>
+            {/* <Button variant="Secondary" type="submit">Start the Adventure</Button> */}
         </Form>
     );
 }
