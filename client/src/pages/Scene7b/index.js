@@ -1,6 +1,8 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/esm/Button';
+
 
 function Scene7b() {
   //Need Reputation Logic Here
@@ -14,8 +16,8 @@ function Scene7b() {
           bulk of the card's content.
         </Card.Text>
         {/* <Card.Text>{ReputationComponent}</Card.Text> */}
-        <Card.Link href="/">Back to Home Page?</Card.Link>
-        <Card.Link href='/CC'>New Game?</Card.Link>
+        <Button variant='outline-danger' href="/">Back to Home Page?</Button>
+        <Button variant='outline-danger' href='/CC'>New Game?</Button>
       </Card.Body>
     </Card>
   );
