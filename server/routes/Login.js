@@ -1,5 +1,6 @@
 const router = require(`express`).Router()
 const {User, Character} = require(`../models`)
+const session = require(`express-session`)
 
 router
     .route(`/`)
