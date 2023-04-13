@@ -24,15 +24,21 @@ const LoginSignupPage = () => {
     return (
       <div className="container">
         <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
-        <form onSubmit={handleSubmit}>
+        <form 
+        action='/Login'
+        method='POST'
+        onSubmit={handleSubmit}
+        >
           <div className="form-group">
             <label htmlFor="usernameInput">Username</label>
             <input
               type="text"
               className="form-control"
               id="usernameInput"
+              name= "usernameInput"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              required
             />
           </div>
           <div className="form-group">
@@ -41,8 +47,10 @@ const LoginSignupPage = () => {
               type="password"
               className="form-control"
               id="passwordInput"
+              name="passwordInput"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </div>
           <button type="submit" className="btn btn-outline-dark">

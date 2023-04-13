@@ -12,7 +12,7 @@ const characterController = {
     },
     getCharacterById({params }, res) {
         Character.findOne({_id: params.id})
-        .populate('userId')
+        .populate(`userId`,`name password`)
         .then((data) =>{
             if(!data){
                 res.status(404).json({message: "There is no character with this ID"})
