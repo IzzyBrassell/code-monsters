@@ -7,7 +7,7 @@ function CharacterCreation() {
         <Form>
             <Form.Group>
                 <Form.Label>What is our Hero's Name?</Form.Label>
-                <Form.Text>Insert Name</Form.Text>
+                <Form.Control type='name' placeholder='Enter Name' />
             </Form.Group>
             <Form.Group>
                 <Form.Label>What is the Gender of our Hero</Form.Label>
