@@ -3,6 +3,7 @@ const {User, Character} = require(`../models`)
 const userController = {
     getAllUsers(req, res){
         User.find({})
+        .populate(`character`, `name gender class hp defense attack reputation`)
         .then((data) => res.json(data))
         .catch((err) => {
             console.log(err)
@@ -12,6 +13,7 @@ const userController = {
 
     getUserById({ params} ,res) {
         User.findOne({_id: params.id})
+        .populate(`character`, `name gender class hp defense attack reputation`)
         .then((data) => {
             if(!data){
                 res.status(404).json({message: "There is no user with this ID"})
