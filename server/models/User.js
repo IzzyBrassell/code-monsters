@@ -14,7 +14,11 @@ const userSchema = new Schema({
       type: String,
       required: true,
       minlength: 5,
-    }
+    },
+    character: {
+      type: Schema.Types.ObjectId,
+      ref: `Character`
+    },
   });
   
   // set up pre-save middleware to create password
