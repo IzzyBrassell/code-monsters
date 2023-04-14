@@ -1,9 +1,9 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form'
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function CharacterCreation({ userid }) {
-    const history = useHistory();
+    const navigate = useNavigate();
   
     const handleFormSubmit = async (e) => {
         e.preventDefault();
@@ -66,7 +66,7 @@ function CharacterCreation({ userid }) {
       
                 if (createResponse.ok) {
                   // Handle successful response
-                  history.push('/S1');
+                  navigate('/S1');
                 } else {
                   // Handle error response
                   console.error('Character Creation Failed:', createResponse.statusText);
