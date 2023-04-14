@@ -1,71 +1,48 @@
 import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom'
 
 const LoginSignupPage = () => {
-  const [username, setUsername] = useState('');
+  const navigate = useNavigate()
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [isLogin, setIsLogin] = useState(true);
 
-  // if (req.session.logged_in === true) {
-  //   window.location.href = '/';
-  // }
+const handleSubmit = async (event) => {
+  event.preventDefault()
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  //   // we need to make an API call to Mongo to handle authentication
+  const endpoint = isLogin ? `/api/users/login` : `/api/users/signup`;
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({name, password})
+    });
 
-    if (isLogin) {
-      console.log('Performing login with username:', username, 'and password:', password);
-  //     // Make API call for login
-  //     const response = await fetch('/api/users/login', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       },
-  //       body: JSON.stringify({ username, password })
-  //     });
-
-  //     if (response.ok) {
-  //       // Redirect to '/'
-  //       req.session.logged_in = true;
-  //       window.location.href = '/';
-  //     } else {
-  //       // Handle login error
-  //       console.error('Failed to login:', response.status);
-  //     }
-    } else {
-      console.log('Performing signup with username:', username, 'and password:', password);
-  //     // Make API call for signup
-  //     const response = await fetch('/api/users/signup', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       },
-  //       body: JSON.stringify({ username, password })
-  //     });
-
-  //     if (response.ok) {
-  //       // Redirect to '/'
-  //       window.location.href = '/';
-  //     } else {
-  //       // Handle signup error
-  //       console.error('Failed to signup:', response.status);
-  //     }
+    if (isLogin && response.ok) {
+      navigate('/CC')
+    } else if (!isLogin && response.ok) {
+      setIsLogin()
+      alert('Sign up successful, Please Log in :)')
     }
 
-    // Clear the form
-    setUsername('');
+  } catch (error) {
+    console.error(error)
+    
+    setName('');
     setPassword('');
-  };
+  
+  }
+}
+
+
   
     return (
       <div className="container">
         <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
-        <form 
-        action='/Login'
-        method='POST'
-        onSubmit={handleSubmit}
-        >
+        <form  onSubmit={handleSubmit} >
           <div className="form-group">
             <label htmlFor="usernameInput">Username</label>
             <input
@@ -73,8 +50,8 @@ const LoginSignupPage = () => {
               className="form-control"
               id="usernameInput"
               name= "usernameInput"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               required
             />
           </div>
