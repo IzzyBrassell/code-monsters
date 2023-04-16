@@ -55,7 +55,6 @@ const userController = {
                 return;
             }
             
-            // const validPassword = await bcrypt.compareSync(hashedPW , userData.password)
             const validPassword = await userData.isCorrectPassword(req.body.password)
             
             if(!validPassword){
@@ -63,22 +62,42 @@ const userController = {
                 return;
             }
 
+            if (req.session) {
+                req.session.user_id = userData.id
+                req.session.logged_in = true
+                req.session.save(()=> {
+                    res.json({user:userData, message: `You are now logged in!`})
+                })
+            }
 
-            req.session.save(() => {
-                req.session.user_id = userData.id;
-                req.session.logged_in = true;
-                res.json({ user: userData, message: 'You are now logged in!' });
-              });
-              return;
-
+            var charData = await Character.findOne({userId: req.session.user_id})
+            if(charData == null){
+                const newChar = new Character({
+                    userId: req.session.user_id 
+                })
+                const savedChar = await newChar.save()
+                userData.character = savedChar.id
+                await userData.save()
+            }
+            if (req.session) {
+                req.session.char_id = charData.id
+                req.session.char_name = charData.name
+                req.session.gender = charData.gender
+                req.session.class = charData.class
+                req.session.hp = charData.hp
+                req.session.defense = charData.defense
+                req.session.attack = charData.attack
+                req.session.reputation = charData.reputation
+                req.session.sceneId = charData.sceneId
+                req.session.save(()=>{})
+            }
         } catch (err) {
             console.error(err)
             return res.status(500).json({message: 'failure to login'})
         }
+        
     },
     logoutUser (req, res) {
-        console.log(`boolean` , req.session.logged_in)
-        console.log(`id` , req.session.user_id)
         if (req.session.logged_in) {
             req.session.destroy(() => {
               res.status(204).end();
