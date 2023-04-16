@@ -69,9 +69,7 @@ const userController = {
                     res.json({user:userData, message: `You are now logged in!`})
                 })
             }
-
-            var charData = await Character.findOne({userId: req.session.user_id})
-            if(charData == null){
+            if(userData.character == null){
                 const newChar = new Character({
                     userId: req.session.user_id 
                 })
@@ -79,6 +77,7 @@ const userController = {
                 userData.character = savedChar.id
                 await userData.save()
             }
+            var charData = await Character.findOne({userId: req.session.user_id})
             if (req.session) {
                 req.session.char_id = charData.id
                 req.session.char_name = charData.name

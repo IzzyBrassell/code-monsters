@@ -6,18 +6,6 @@ import { useNavigate } from 'react-router-dom'
 
 function TopOfPage() {
 const navigate = useNavigate()
-        //Need Save/Load Logic Here with an onclick function
-        // function handleLogout() {
-        //     fetch('/api/users/logout')
-        //     .then(res => {
-        //       if (res.ok) {
-        //         res.send(`/`);
-        //       } else {
-        //         console.error('logout failed')
-        //       }
-        //     })
-        //     .catch(error => {console.error(error)})
-        // }
       async function handleSave(e){
         e.preventDefault()
         let path = '/CC'
@@ -35,8 +23,7 @@ const navigate = useNavigate()
             })
           })
           if (updateResponse.ok) {
-            // Handle successful response
-            navigate('/S1')
+            alert(`Saved!`) 
         }else {
           // Handle error response
           console.error('Save has failed!');
@@ -76,7 +63,7 @@ const navigate = useNavigate()
             <NavDropdown title="Save/Load" id="basic-nav-dropdown">
               <NavDropdown.Item onClick={handleSave}>Save Game</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item >
+              <NavDropdown.Item href='/load'>
                 Load Game
               </NavDropdown.Item>
             </NavDropdown>

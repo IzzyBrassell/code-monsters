@@ -4,7 +4,7 @@ const connection = require(`../config/connection`)
 const characterSchema = new Schema({
     name: {
         type: String,
-        default: null
+        default: ``
     },
     gender: {
         type: String,
@@ -16,15 +16,15 @@ const characterSchema = new Schema({
     },
     hp: {
         type: Number,
-        default: 0
+        default: 10
     },
     defense: {
         type: Number,
-        default: 0
+        default: 10
     },
     attack: {
         type: Number,
-        default: 0
+        default: 10
     },
     reputation: {
         type: Number,
