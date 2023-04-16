@@ -18,7 +18,8 @@ const userSchema = new Schema({
     },
     character: {
       type: Schema.Types.ObjectId,
-      ref: `Character`
+      ref: `Character`,
+      default: null
     },
   });
   
