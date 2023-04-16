@@ -93,9 +93,7 @@ const userController = {
             }
         } catch (err) {
             console.error(err)
-            return res.status(500).json({message: 'failure to login'})
         }
-        
     },
     logoutUser (req, res) {
         if (req.session.logged_in) {
