@@ -18,6 +18,24 @@ const navigate = useNavigate()
         //     })
         //     .catch(error => {console.error(error)})
         // }
+      //   async function handleLoad(e){
+      //     try{
+      //       const updateResponse = await fetch('/load', {
+      //         method: 'GET',
+      //         headers: {
+      //           'Content-Type': 'application/json'
+      //         }
+      //       })
+      //       if (updateResponse.ok) {
+      //         return
+      //     }else {
+      //       // Handle error response
+      //       console.error('Load has failed!');
+      //     }
+      //   } catch (error){
+      //     console.log(error)
+      //   }
+      // }
       async function handleSave(e){
         e.preventDefault()
         let path = '/CC'
@@ -35,8 +53,7 @@ const navigate = useNavigate()
             })
           })
           if (updateResponse.ok) {
-            // Handle successful response
-            navigate('/S1')
+            alert(`Saved!`) 
         }else {
           // Handle error response
           console.error('Save has failed!');
@@ -76,7 +93,7 @@ const navigate = useNavigate()
             <NavDropdown title="Save/Load" id="basic-nav-dropdown">
               <NavDropdown.Item onClick={handleSave}>Save Game</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item >
+              <NavDropdown.Item>
                 Load Game
               </NavDropdown.Item>
             </NavDropdown>
