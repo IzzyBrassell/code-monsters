@@ -9,9 +9,11 @@ const {
 router
     .route(`/`)
     .get(getAllCharacters)
+    // .post(createCharacter)
+    // .put()
 
 router
-    .route(`:id`)
+    .route(`/:id`)
     .get(getCharacterById)
 
 module.exports = router
