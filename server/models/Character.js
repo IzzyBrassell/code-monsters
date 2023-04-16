@@ -31,7 +31,7 @@ const characterSchema = new Schema({
         default: 0
     },
     sceneId: {
-        type: Number,
+        type: String,
         default: null
     },
     userId: { 

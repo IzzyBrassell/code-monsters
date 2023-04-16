@@ -3,14 +3,14 @@ const {User, Character} = require(`../../models`)
 
 const {
     getAllCharacters,
-    getCharacterById
+    getCharacterById,
+    updateCharacter
 } = require(`../../controller/character-controller`)
 
 router
     .route(`/`)
     .get(getAllCharacters)
-    // .post(createCharacter)
-    // .put()
+    .put(updateCharacter)
 
 router
     .route(`/:id`)
