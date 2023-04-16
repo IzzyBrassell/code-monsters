@@ -4,7 +4,7 @@ const connection = require(`../config/connection`)
 const characterSchema = new Schema({
     name: {
         type: String,
-        default: null
+        default: ``
     },
     gender: {
         type: String,
