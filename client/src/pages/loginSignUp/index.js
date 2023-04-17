@@ -22,7 +22,7 @@ const handleSubmit = async (event) => {
     });
 
     if (isLogin && response.ok) {
-      navigate('/CC')
+      navigate('/')
     } else if (!isLogin && response.ok) {
       setIsLogin()
       alert('Sign up successful, Please Log in :)')
