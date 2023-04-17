@@ -53,7 +53,7 @@ const navigate = useNavigate()
   return (
     <Navbar bg="danger" expand="lg">
       <Container>
-        <Navbar.Brand href="/">Code Monsters</Navbar.Brand>
+        <Navbar.Brand href="/">Quest of the Dragon Slayer</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
